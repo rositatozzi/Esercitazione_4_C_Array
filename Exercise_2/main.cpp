@@ -23,8 +23,8 @@ int main()
     }
 
 
-    ios in(NULL);
-    in.copyfmt(cout);
+    ios precIn(NULL);
+    precIn.copyfmt(cout);
 
     string line;
     getline(ifstr,line);//leggo prima riga per estrarre S
@@ -35,7 +35,7 @@ int main()
     ofstr<<"S = "<<fixed<< setprecision(2) <<S<<", ";
     getline(ifstr,line);//leggo seconda riga per estrarre n
     convert = istringstream(line);
-    int n;
+    unsigned int n;
     convert>>c>>c>>n;
     ofstr<<"n = "<<n<<endl;
 
@@ -44,10 +44,10 @@ int main()
     double * ptrW  = new double[n];
     double * ptrR  = new double[n];
     ofstr<< "w = [ ";
-    ofstr.copyfmt(in);
+    ofstr.copyfmt(precIn);
     double w;
     double r;
-    for(int i = 0; i<n; i++){
+    for(unsigned int i = 0; i<n; i++){
         getline(ifstr,line);
         convert = istringstream(line);
         convert>>w>>c>>r;
@@ -57,7 +57,7 @@ int main()
     }
     ofstr<< "]\n" << "r = [ " ;
 
-    for(int i = 0; i<n; i++){
+    for(unsigned int i = 0; i<n; i++){
         ofstr << ptrR[i]-1 << " "; //sottraggo 1 perchè devo stampare r e non r+1
     }
 
